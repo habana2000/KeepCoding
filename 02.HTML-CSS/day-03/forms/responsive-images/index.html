@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images</title>
+</head>
+<body>
+    <h1>Responsive Images</h1>
+    <!-- -->
+    <picture>
+        <!-- 0px----------head2x>-------------- -->
+        <!-- |------------800px---------------- -->
+        <source
+            media="(min-width: 800px)"
+            srcset="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-2x.jpg"
+        >
+        <!-- 0px----------headsmall>----------- -->
+        <!-- |------------400px---------------- -->
+        <source
+            media="(min-width: 400px)"
+            srcset="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-small.jpg"
+        >
+        <img src="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-fb.jpg" alt="">
+    </picture>
+
+    <!--
+https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-2x.jpg
+https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-small.jpg
+https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/head-fb.jpg
+
+    -->
+</body>
+</html>

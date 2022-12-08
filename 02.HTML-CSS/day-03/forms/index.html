@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form example</title>
+</head>
+<body>
+    <h1>Form example</h1>
+    <form 
+        action="./registro-completado.html"
+        method="post"
+    >    
+        <div>
+            <label for="eMail">eMail</label>
+            <input required name="Correo" id="eMail" type="email" placeholder="add your eMail">        
+        </div>
+        <div>       
+            <label for="pass">Password</label>
+            <input required name="Contrasenya" id="pass" type="password" placeholder="add your password">
+        </div>
+        <!-- Para que no haga el submit (type="button") -->
+        <button type="button">Ver mas datos</button>
+
+        <!-- Radio Buttons -->
+        <fieldset>
+            <legend>Favorite Programming Language</legend>
+            <label for="js">Javascript</label>
+            <input type="radio" id="js" name="favLang" value="js">
+            <label for="py">python</label>
+            <input type="radio" id = "py" name="favLang" value="py">
+            <label for="net">.NET</label>
+            <input type="radio" id="net" name="favLang" value="net">
+        </fieldset>
+        <!-- Checkbox -->
+        <fieldset>
+            <legend>Skills</legend>
+            <input type="checkbox" id="skilljs" name="skill" value="js">
+            <label for="skilljs">Javascript</label>
+            <input type="checkbox" id = "skillpy" name="skill" value="py">
+            <label for="skillpy">python</label>
+            <input type="checkbox" id="skillnet" name="skill" value="net">
+            <label for="skillnet">.NET</label>
+        </fieldset>
+        <fieldset>
+            <div>
+                <input type="checkbox" name="spam" id="spam">
+                <label for="spam">Subcribe to my newslater</label>
+            </div>
+            <div>
+                <input required type="checkbox" name="??" id="TermsAndConditions">
+                <label for="TermsAndConditions">Accept Terms and Conditions</label>
+            </div>
+        </fieldset>
+        <!-- Otros input fields -->
+        <div>
+            <div>
+                <label for="phone">Teléfono</label>
+                <input required type="tel" name="phone" id="phone" pattern="[0-9]+">
+            </div>
+            <input type="color" name="" id="">
+            <input type="date" name="" id="">
+            <input type="file" name="" id="">
+            <input type="range" name="" id="">
+            <input type="number" name="" id="">
+            <br>
+            <label for="bio">Biografia:</label>
+            <textarea required minlength="10" name="bio" id="bio" cols="30" rows="10">Biografia</textarea>
+            <br>
+            <!-- Es mejor no usarlo ya qwue tiene varios incnvenientes -->
+            <select name="Ciudad" id="ciudad">
+                <option value="MAD">Madrid</option>
+                <option value="BCN">Barcelona</option>
+                <option value="SEV">Sevilla</option>
+            </select>
+        </div>
+        <!-- Los 2 botones funcionan igual -->
+        <button type="submit">Registrar</button>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

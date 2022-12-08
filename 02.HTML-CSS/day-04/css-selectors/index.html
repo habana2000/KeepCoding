@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+
+    <!-- STYLE -->    
+    <style>
+        /* Selector de clase */
+        .title {
+            color: blue;
+            font-style: italic;
+        }
+            /* Sólo para los title de dentro de container */
+        .container .title {
+            font-style: normal;
+            color: black;
+        }
+        .primary {
+            color: chocolate;
+        }
+        /* Selector etiqueta */
+        h1 {
+            color: red;
+        }
+        h1 {
+            color: green; 
+            font-size: xx-large;
+        }
+        /* Selector de id */
+        #header-1 {
+            color: purple
+        }
+        /* Selector de attribute */
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Hello World</h1>
+        <h1 style="color: red;">KeepCoding class</h1>
+    </div>
+    <div>
+        <h1 class="title primary">Header modificado con class</h1>
+        <h1 class="title" id="header-1">Header with #id</h1>
+    </div>
+</body>
+</html>

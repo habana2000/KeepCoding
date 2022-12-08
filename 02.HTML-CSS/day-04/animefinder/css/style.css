@@ -1,0 +1,28 @@
+/* style.css */
+
+/* Variables */
+:root {
+    --main-color: #4C4AE6;
+    font-size: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.footer {
+    /* background-color: rgb(100,100,100); */
+    color: #FFF;
+    background-color: var(--main-color);
+    /* rgba --Z color rgb con tranparencia */
+    /* olor: rgba(0,0,0,0.8); */
+    text-align: center;
+    font-style: italic;
+    /* 1 em,  / 1 rem 00 16px */
+    font-size: 1em;
+    /* Top - Right - Bottom - Left */
+    padding: 20px 0 20px 0;
+}
+
+
+
