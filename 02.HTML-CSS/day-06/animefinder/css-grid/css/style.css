@@ -1,0 +1,40 @@
+body {
+    display: grid;
+    grid-template-columns: 40% 1fr 2fr;
+    /* fr es el espacio libre */
+    grid-template-rows: 80px 20vh 50vh 150px;
+    grid-template-areas: 
+    "header header header"
+    "navbar navbar navbar"
+    ;
+}
+
+nav {
+    background-color: orange;
+    grid-area: navbar;
+    /*
+    grid-column-start: 1;
+    grid-column-end: 4;
+    */
+}
+header {
+    background-color: aqua;
+    grid-area: header;
+    /*
+    grid-column-start: 1;
+    grid-column-end: 4;
+    */
+}
+aside {
+    background-color: blueviolet;
+    grid-row: 3 / 5;
+}
+main {
+    background-color: yellow;
+    grid-column: 2 / 4;
+}
+footer {
+    background-color: green;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
