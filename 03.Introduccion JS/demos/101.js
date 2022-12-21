@@ -79,3 +79,6 @@ for (let os of keyboardItem.OS) {
     console.log("No es Windows ni Linux");
   }
 }
+
+
+
