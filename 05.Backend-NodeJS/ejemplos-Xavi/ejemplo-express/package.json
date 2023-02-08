@@ -1,0 +1,14 @@
+{
+  "name": "expresspkg",
+  "version": "1.0.0",
+  "description": "dsadasdasfasd",
+  "main": "index.js",
+  "scripts": {
+    "test": "dfsagffdsgdf"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

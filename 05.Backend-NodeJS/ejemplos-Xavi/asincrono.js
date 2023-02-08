@@ -21,17 +21,34 @@ escribeTras2Segundos('texto1', () => {
 
 
 // Bucle para n veces
-
+/*
 function serie (n, fn, callback) {
     if (n==0) {
         callback();
         return;
     }
-    fn ('texto' + n, () => {
+    fn ('texto ' + n, () => {
         serie(n-1,fn,callback)
     })
 }
 
 serie(5, escribeTras2Segundos, () => {
+    console.log('fin')
+})
+*/
+
+// Bucle con array
+
+function serie (array, fn, callback) {
+    if (array.length == 0) {
+        callback();
+        return;
+    }
+    fn ('texto ' + array.shift(), () => {
+        serie(array,fn,callback)
+    })
+}
+
+serie(['uno','dos','tres','cuatro','cinco'], escribeTras2Segundos, () => {
     console.log('fin')
 })
