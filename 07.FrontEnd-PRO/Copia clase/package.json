@@ -1,0 +1,27 @@
+{
+  "name": "html-css-practica-pro",
+  "version": "1.0.0",
+  "description": "[![GitHub issues](https://img.shields.io/github/issues/KeepCodingWeb14/html-css-practica)](https://github.com/KeepCodingWeb14/html-css-practica/issues)\r [![GitHub stars](https://img.shields.io/github/stars/KeepCodingWeb14/html-css-practica)](https://github.com/KeepCodingWeb14/html-css-practica/stargazers)",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeepCodingWeb14/html-css-practica-pro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KeepCodingWeb14/html-css-practica-pro/issues"
+  },
+  "homepage": "https://github.com/KeepCodingWeb14/html-css-practica-pro#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "lodash": "^4.17.21",
+    "style-loader": "^3.3.2",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  }
+}
