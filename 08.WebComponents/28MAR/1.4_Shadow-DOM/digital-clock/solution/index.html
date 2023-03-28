@@ -12,17 +12,22 @@
         color: red;
       }
       p {
-        color: green;
+        color: var(--css-property-name, blue);
       }
     </style>
-    <h1>use your digital-clock here!</h1>
-    
+
+    <style>
+      :root {
+        --css-property-name: #666666;
+        --css-property-name-2: 20px;
+        --digital-clock-title-color: violet;
+      }
+    </style>
+    <!-- nuestro punto de partida será el resultado del ejercicio anterior -->
+    <h1>Digital clock (index.html)</h1>
+
     <digital-clock></digital-clock>
-    
+
     <script src="./digital-clock.js"></script>
   </body>
-  <!-- 
-    1- Import the script.
-    2- use the custom element.
-  -->
 </html>
