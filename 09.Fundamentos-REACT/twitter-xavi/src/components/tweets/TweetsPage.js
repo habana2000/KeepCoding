@@ -1,37 +1,45 @@
-const tweets = [
-    {
-        content: "Hola",
-        UserId: 1,
-        updatedAt: 'xcxcvsvv',
-        id:1,
-      },
-      {
-        content: "Adiós",
-        UserId: 1,
-        updatedAt: 'xcxcvsvv',
-        id:2,
-      },
-      ];
+import classNames from 'classnames';
+// import './styles.css';
+import styles from './styles.module.css';
+import { useEffect, useState } from 'react';
+import { getLatestTweets } from './service';
 
-const styles ={
-    backgroundColor: 'darkblue',
-}
+const styleInline = {
+  backgroundColor: 'lightblue',
+};
 
 const TweetsPage = () => {
-    const theme = 'dark';
+  const [tweets, setTweets] = useState([]);
 
-    return (
-    <div className="tweetsPage"
-    style ={{
-        backgroundColor: theme === 'light' ? 'lightblue' : 'darkblue',
-    }}>
+  useEffect(() => {
+    getLatestTweets().then(tweets => setTweets(tweets));
+  }, []);
+
+  const theme = 'dark';
+  const className = classNames(
+    'tweetsPage',
+    {
+      light: theme === 'light',
+      dark: theme === 'dark',
+    },
+    'otherclass',
+  );
+
+  return (
+    <div
+      //   className={className}
+      className={styles.tweetsPage}
+      //   style={{
+      //     backgroundColor: theme === 'light' ? 'lightblue' : 'darkblue',
+      //   }}
+    >
       <ul>
         {tweets.map(tweet => (
-          <li key={tweet.id} style={styles}>{tweet.content}</li>
+          <li key={tweet.id}>{tweet.content}</li>
         ))}
       </ul>
     </div>
-    )
-}
+  );
+};
 
 export default TweetsPage;
