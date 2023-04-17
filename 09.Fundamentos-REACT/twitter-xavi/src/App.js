@@ -6,7 +6,9 @@ import Button from './components/shared/Button';
 function App() {
   return (
     <div className="App">
-      <TweetsPage />
+      </* TweetsPage*/ />
+      >LoginPage />
+      /*
       <Button variant="secondary" onClick={event => console.log(event)}>
         Click me!
       </Button>
@@ -16,6 +18,7 @@ function App() {
       <Button variant="primary" disabled onClick={event => console.log(event)}>
         Click me!
       </Button>
+      */
     </div>
   );
 }
