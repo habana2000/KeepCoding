@@ -1,24 +1,31 @@
 import TweetsPage from './components/tweets/TweetsPage';
 
 import './App.css';
-import Button from './components/shared/Button';
+import LoginPage from './components/auth/LoginPage';
+import { useState } from 'react';
+import NewTweetPage from './components/tweets/NewTweetPage';
 
-function App() {
+function App({ isInitiallyLogged }) {
+  const [isLogged, setIsLogged] = useState(isInitiallyLogged);
+
+  const handleLogin = () => {
+    setIsLogged(true);
+  };
+
+  const handleLogout = () => {
+    setIsLogged(false);
+  };
+
   return (
     <div className="App">
-      </* TweetsPage*/ />
-      >LoginPage />
-      /*
-      <Button variant="secondary" onClick={event => console.log(event)}>
-        Click me!
-      </Button>
-      <Button variant="primary" onClick={event => console.log(event)}>
-        Click me!
-      </Button>
-      <Button variant="primary" disabled onClick={event => console.log(event)}>
-        Click me!
-      </Button>
-      */
+      {isLogged ? (
+        <>
+          <TweetsPage onLogout={handleLogout} isLogged={isLogged} />
+          <NewTweetPage onLogout={handleLogout} isLogged={isLogged} />
+        </>
+      ) : (
+        <LoginPage onLogin={handleLogin} />
+      )}
     </div>
   );
 }
