@@ -1,51 +1,56 @@
-import classNames from 'classnames';
-// import './styles.css';
-import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
 import { getLatestTweets } from './service';
 import Button from '../shared/Button';
 import Layout from '../layout/Layout';
+import Tweet from './Tweet';
+import { Link } from 'react-router-dom';
 
-const styleInline = {
-  backgroundColor: 'lightblue',
-};
+const EmptyList = () => (
+  <div style={{ textAlign: 'center' }}>
+    <p>Be the first one!</p>
+    <Button as={Link} variant="primary" to="/tweets/new">
+      Create tweet
+    </Button>
+  </div>
+);
 
 const TweetsPage = props => {
+  const [isLoading, setIsLoading] = useState(true);
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
-    getLatestTweets().then(tweets => setTweets(tweets));
-  }, []);
+    async function fetchData() {
+      setIsLoading(true);
+      const tweets = await getLatestTweets();
 
-  const theme = 'dark';
-  const className = classNames(
-    'tweetsPage',
-    {
-      light: theme === 'light',
-      dark: theme === 'dark',
-    },
-    'otherclass',
-  );
+      setTweets(tweets);
+      setIsLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <Layout title="What's going on..." {...props}>
-      <div
-        //   className={className}
-        className={styles.tweetsPage}
-        //   style={{
-        //     backgroundColor: theme === 'light' ? 'lightblue' : 'darkblue',
-        //   }}
-      >
-        {!!tweets.length ? (
-          <ul>
-            {tweets.map(tweet => (
-              <li key={tweet.id}>{tweet.content}</li>
-            ))}
-          </ul>
-        ) : (
-          <Button variant="primary">Be the first one...</Button>
-        )}
-      </div>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          {!!tweets.length ? (
+            <ul>
+              {tweets.map(tweet => (
+                <li key={tweet.id}>
+                  <Link to={`/tweets/${tweet.id}`}>
+                    <Tweet {...tweet} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <EmptyList />
+          )}
+        </div>
+      )}
     </Layout>
   );
 };
